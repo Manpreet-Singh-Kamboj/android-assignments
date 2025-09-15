@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">एंड्रॉइड असाइनमेंट्स</string>
+    <string name="hello_message">नमस्ते दुनिया!</string>
+    <string name="button_text">मैं एक बटन हूँ</string>
+</resources>
