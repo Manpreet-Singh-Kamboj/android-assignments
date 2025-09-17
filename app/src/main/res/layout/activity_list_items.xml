@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<GridLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    tools:context=".ListItemsActivity"
+    android:columnCount="2"
+    android:rowCount="2">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/black"
+        app:title="@string/list_items_title"
+        app:titleTextColor="@color/white"
+        android:layout_columnSpan="2" />
+
+    <RadioButton
+        android:id="@+id/radioButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/radio_button_label"
+        android:layout_columnWeight="1"/>
+
+    <CheckBox
+        android:id="@+id/checkBox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/checkbox_label"
+        android:layout_columnWeight="1"/>
+
+    <androidx.appcompat.widget.SwitchCompat
+        android:id="@+id/switch1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/switch_label"
+        android:layout_columnWeight="1" />
+
+    <ImageButton
+        android:id="@+id/imageButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:srcCompat="@android:drawable/ic_menu_camera"
+        android:contentDescription="@string/camera_image_description"
+        android:layout_columnWeight="1" />
+
+    <Button
+        android:id="@+id/navigate_to_main_activity"
+        android:layout_marginTop="10dp"
+        android:text="@string/navigate_to_main_activity"
+        android:backgroundTint="@color/black"
+        android:textColor="@color/white"
+        android:layout_columnWeight="1" />
+
+</GridLayout>

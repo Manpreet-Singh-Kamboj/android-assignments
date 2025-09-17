@@ -3,4 +3,16 @@
     <string name="app_name">एंड्रॉइड असाइनमेंट्स</string>
     <string name="hello_message">नमस्ते दुनिया!</string>
     <string name="button_text">मैं एक बटन हूँ</string>
+    <string name="login_title">लॉगिन</string>
+    <string name="email_input_label">लॉगिन</string>
+    <string name="email_hint">लॉगिन नाम</string>
+    <string name="password_input_label">पासवर्ड</string>
+    <string name="login_button_text">लॉगिन</string>
+    <string name="list_items_title">सूची आइटम्स</string>
+    <string name="radio_button_label">रेडियो बटन</string>
+    <string name="checkbox_label">चेकबॉक्स</string>
+    <string name="switch_label">यह क्या करता है?</string>
+    <string name="camera_image_description">कैमरा इमेज</string>
+    <string name="navigate_to_main_activity">मुख्य गतिविधि पर जाएँ</string>
+    <string name="main_activity_title">मुख्य</string>
 </resources>
