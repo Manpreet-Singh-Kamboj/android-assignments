@@ -128,7 +128,7 @@ public class ListItemsActivity extends AppCompatActivity {
             if(grantedResults.length > 0 && grantedResults[0] == PackageManager.PERMISSION_GRANTED){
                 openCamera();
             }else{
-                Toast.makeText(this,"Camera Permission Denied",Toast.LENGTH_LONG).show();
+                Toast.makeText(this,getString(R.string.camera_permission_denied),Toast.LENGTH_LONG).show();
             }
         }
     }
@@ -141,7 +141,7 @@ public class ListItemsActivity extends AppCompatActivity {
                 print("Received Image Bitmap: " + imageBitmap);
                 imageButton.setImageBitmap(imageBitmap);
             }else{
-                Toast.makeText(this, "Failed to capture image", Toast.LENGTH_LONG).show();
+                Toast.makeText(this, getString(R.string.camera_capture_failed), Toast.LENGTH_LONG).show();
             }
         }
     }
@@ -162,9 +162,9 @@ public class ListItemsActivity extends AppCompatActivity {
     }
     private void setOnCheckedChanged(CompoundButton button, boolean isChecked){
         if(isChecked){
-            Toast.makeText(this, "Switch is On", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, getString(R.string.switch_on), Toast.LENGTH_SHORT).show();
         }else{
-            Toast.makeText(this, "Switch is Off", Toast.LENGTH_LONG).show();
+            Toast.makeText(this, getString(R.string.switch_off), Toast.LENGTH_LONG).show();
         }
     }
     private void onCheckChanged(CompoundButton button, boolean isChecked){
@@ -173,7 +173,7 @@ public class ListItemsActivity extends AppCompatActivity {
                 .setMessage(getString(R.string.alert_dialog_description))
                 .setPositiveButton(getString(R.string.ok), (dialogInterface, i) -> {
                     Intent intent = new Intent();
-                    intent.putExtra("Response", "Here is my response");
+                    intent.putExtra("Response", getString(R.string.list_item_response));
                     setResult(ListItemsActivity.RESULT_OK, intent);
                     finish();
                 })

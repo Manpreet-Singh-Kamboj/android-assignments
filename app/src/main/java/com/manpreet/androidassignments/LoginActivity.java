@@ -24,7 +24,6 @@ import com.google.android.material.snackbar.Snackbar;
 public class LoginActivity extends AppCompatActivity {
     String DEBUG_MESSAGE_KEY = "LOGIN_DEBUG";
     private SharedPreferences sharedPreferences;
-    private LinearLayout layout;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,7 +34,6 @@ public class LoginActivity extends AppCompatActivity {
         loadUserData();
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-        layout = findViewById(R.id.main);
         Button loginButton = findViewById(R.id.login_button);
         loginButton.setOnClickListener(this::onLoginClick);
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
@@ -89,11 +87,11 @@ public class LoginActivity extends AppCompatActivity {
         EditText loginInput = findViewById(R.id.email);
         EditText passwordInput = findViewById(R.id.password);
         if(loginInput.getText().length() == 0 || passwordInput.getText().length() == 0){
-            Toast.makeText(this,"Email or Password cannot be empty", Toast.LENGTH_LONG).show();
+            Toast.makeText(this,getString(R.string.empty_email_or_password), Toast.LENGTH_LONG).show();
             return;
         }
         if(!Patterns.EMAIL_ADDRESS.matcher(loginInput.getText().toString()).matches()){
-            Toast.makeText(this, "Please enter a valid email address", Toast.LENGTH_LONG).show();
+            Toast.makeText(this, getString(R.string.invalid_email_format), Toast.LENGTH_LONG).show();
             return;
         }
         SharedPreferences.Editor sharedPreferencesEditor = sharedPreferences.edit();

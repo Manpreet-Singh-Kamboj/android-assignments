@@ -21,7 +21,6 @@ import com.google.android.material.snackbar.Snackbar;
 
 public class MainActivity extends AppCompatActivity {
     String DEBUG_MESSAGE_KEY = "MAIN_DEBUG";
-    private ConstraintLayout layout;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,7 +31,6 @@ public class MainActivity extends AppCompatActivity {
         setSupportActionBar(toolbar);
         Button button = findViewById(R.id.button);
         button.setOnClickListener(this::onButtonClick);
-        layout = findViewById(R.id.main);
         if(getSupportActionBar() != null){
             getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         }
@@ -92,7 +90,7 @@ public class MainActivity extends AppCompatActivity {
             Log.d(DEBUG_MESSAGE_KEY, "Returned to MainActivity.onActivityResult");
         }
         if(data.getStringExtra("Response") != null){
-            Toast.makeText(this, "ListItemsActivity passed: " + data.getStringExtra("Response"), Toast.LENGTH_LONG).show();
+            Toast.makeText(this, getString(R.string.list_item_passed_description) + data.getStringExtra("Response"), Toast.LENGTH_LONG).show();
         }
     }
     public void onButtonClick(View view){
