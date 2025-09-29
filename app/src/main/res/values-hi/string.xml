@@ -15,4 +15,12 @@
     <string name="camera_image_description">कैमरा इमेज</string>
     <string name="navigate_to_main_activity">मुख्य गतिविधि पर जाएँ</string>
     <string name="main_activity_title">मुख्य</string>
+    <string name="alert_dialog_title">क्या आप वाकई जारी रखना चाहते हैं?</string>
+    <string name="alert_dialog_description">आप वर्तमान गतिविधि समाप्त करने जा रहे हैं और पिछली गतिविधि पर वापस ले जाए जाएँगे।</string>
+    <string name="ok">ठीक है</string>
+    <string name="cancel">रद्द करें</string>
+
+    <!--Shared Preferences-->
+    <string name="shared_preferences_file_name">ऐपडाटा</string>
+    <string name="shared_preferences_email_key">ईमेल</string>
 </resources>

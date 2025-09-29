@@ -14,4 +14,12 @@
     <string name="camera_image_description">Camera Image</string>
     <string name="navigate_to_main_activity">Navigate to Main Activity</string>
     <string name="main_activity_title">Main</string>
+    <string name="alert_dialog_title">Are you sure you want to continue?</string>
+    <string name="alert_dialog_description">You are going to finish the current activity and will be navigated back to the previous activity.</string>
+    <string name="ok">OK</string>
+    <string name="cancel">CANCEL</string>
+
+    <!--Shared Preferences-->
+    <string name="shared_preferences_file_name">appData</string>
+    <string name="shared_preferences_email_key">email</string>
 </resources>
