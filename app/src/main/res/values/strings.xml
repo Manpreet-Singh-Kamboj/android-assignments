@@ -17,7 +17,7 @@
     <string name="alert_dialog_title">Are you sure you want to continue?</string>
     <string name="alert_dialog_description">You are going to finish the current activity and will be navigated back to the previous activity.</string>
     <string name="ok">OK</string>
-    <string name="cancel">CANCEL</string>
+    <string name="cancel">@android:string/cancel</string>
 
     <!-- Toast Text -->
     <string name="empty_email_or_password">Email or Password cannot be empty</string>
@@ -28,8 +28,15 @@
     <string name="camera_permission_denied">Camera Permission Denied</string>
     <string name="list_item_passed_description">ListItemsActivity passed: </string>
     <string name="list_item_response">Here is my response</string>
+    <string name="no_image_bitmap_received">No Image Bitmap Received</string>
+    <string name="image_bitmap_received">Image Bitmap Received and Set</string>
+    <string name="request_camera_permission">Requesting Camera Permissions</string>
+    <string name="unable_to_open_camera">Unable to open Camera</string>
 
     <!--Shared Preferences-->
     <string name="shared_preferences_file_name">appData</string>
     <string name="shared_preferences_email_key">email</string>
+
+    <!--Intent Keys-->
+    <string name="list_item_intent_key">Response</string>
 </resources>

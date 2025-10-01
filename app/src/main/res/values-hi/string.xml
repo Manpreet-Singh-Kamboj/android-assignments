@@ -29,9 +29,16 @@
     <string name="camera_permission_denied">कैमरा अनुमति अस्वीकृत</string>
     <string name="list_item_passed_description">ListItemsActivity पास हुआ: </string>
     <string name="list_item_response">यह मेरा उत्तर है</string>
+    <string name="no_image_bitmap_received">कोई इमेज बिटमैप प्राप्त नहीं हुआ</string>
+    <string name="image_bitmap_received">इमेज बिटमैप प्राप्त हुआ और सेट किया गया</string>
+    <string name="request_camera_permission">कैमरा अनुमति का अनुरोध किया जा रहा है</string>
+    <string name="unable_to_open_camera">कैमरा खोलने में असमर्थ</string>
 
 
     <!--Shared Preferences-->
-    <string name="shared_preferences_file_name">ऐपडाटा</string>
-    <string name="shared_preferences_email_key">ईमेल</string>
+    <string name="shared_preferences_file_name">appData</string>
+    <string name="shared_preferences_email_key">email</string>
+
+    <!--Intent Keys-->
+    <string name="list_item_intent_key">Response</string>
 </resources>

@@ -1,12 +1,9 @@
 package com.manpreet.androidassignments;
 
 import android.Manifest;
-import android.content.ContentValues;
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
-import android.net.Uri;
 import android.os.Bundle;
 import android.provider.MediaStore;
 import android.util.Log;
@@ -17,17 +14,11 @@ import android.widget.CheckBox;
 import android.widget.CompoundButton;
 import android.widget.GridLayout;
 import android.widget.ImageButton;
-import android.widget.RadioButton;
 import android.widget.Toast;
-
-import androidx.activity.result.ActivityResult;
-import androidx.activity.result.ActivityResultLauncher;
-import androidx.activity.result.contract.ActivityResultContract;
-import androidx.activity.result.contract.ActivityResultContracts;
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.widget.SwitchCompat;
 import androidx.appcompat.widget.Toolbar;
-
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
@@ -36,10 +27,7 @@ import androidx.core.content.ContextCompat;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
-
 import com.google.android.material.snackbar.Snackbar;
-
-import java.io.IOException;
 
 
 public class ListItemsActivity extends AppCompatActivity {
@@ -122,7 +110,7 @@ public class ListItemsActivity extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
     @Override
-    public void onRequestPermissionsResult(int requestCode, String[] permissions, int[] grantedResults){
+    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions,@NonNull int[] grantedResults){
         super.onRequestPermissionsResult(requestCode,permissions,grantedResults);
         if(requestCode == CAMERA_REQUEST_CODE){
             if(grantedResults.length > 0 && grantedResults[0] == PackageManager.PERMISSION_GRANTED){
@@ -138,10 +126,14 @@ public class ListItemsActivity extends AppCompatActivity {
         if(requestCode == IMAGE_CAPTURE_CODE){
             if(data != null && data.getExtras() != null){
                 Bitmap imageBitmap = (Bitmap) data.getExtras().get("data");
-                print("Received Image Bitmap: " + imageBitmap);
-                imageButton.setImageBitmap(imageBitmap);
+                if(imageBitmap == null){
+                    print(getString(R.string.no_image_bitmap_received));
+                }else{
+                    print(getString(R.string.image_bitmap_received));
+                    imageButton.setImageBitmap(imageBitmap);
+                }
             }else{
-                Toast.makeText(this, getString(R.string.camera_capture_failed), Toast.LENGTH_LONG).show();
+                print(getString(R.string.camera_capture_failed));
             }
         }
     }
@@ -150,11 +142,17 @@ public class ListItemsActivity extends AppCompatActivity {
         startActivity(intent);
     }
     private void openCamera(){
-        Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
-        startActivityForResult(intent, IMAGE_CAPTURE_CODE);
+        try {
+            Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+            startActivityForResult(intent, IMAGE_CAPTURE_CODE);
+        }catch (Exception e){
+            Log.e(DEBUG_MESSAGE_KEY,getString(R.string.unable_to_open_camera));
+            print(getString(R.string.unable_to_open_camera));
+        }
     }
     private void onImageButtonClick(View view){
         if(ContextCompat.checkSelfPermission(this, Manifest.permission.CAMERA) != PackageManager.PERMISSION_GRANTED){
+            print(getString(R.string.request_camera_permission));
             ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.CAMERA}, CAMERA_REQUEST_CODE);
         }else{
             openCamera();
@@ -173,7 +171,7 @@ public class ListItemsActivity extends AppCompatActivity {
                 .setMessage(getString(R.string.alert_dialog_description))
                 .setPositiveButton(getString(R.string.ok), (dialogInterface, i) -> {
                     Intent intent = new Intent();
-                    intent.putExtra("Response", getString(R.string.list_item_response));
+                    intent.putExtra(getString(R.string.list_item_intent_key), getString(R.string.list_item_response));
                     setResult(ListItemsActivity.RESULT_OK, intent);
                     finish();
                 })
