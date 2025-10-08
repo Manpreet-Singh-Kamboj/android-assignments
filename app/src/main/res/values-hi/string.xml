@@ -19,6 +19,13 @@
     <string name="alert_dialog_description">आप वर्तमान गतिविधि समाप्त करने जा रहे हैं और पिछली गतिविधि पर वापस ले जाए जाएँगे।</string>
     <string name="ok">ठीक है</string>
     <string name="cancel">रद्द करें</string>
+    <string name="start_chat_text">चैट शुरू करें</string>
+    <string name="send_button">भेजें</string>
+    <string name="default_message">परीक्षण संदेश</string>
+    <string name="sym_call_outgoing_description">सिम कॉल आउटगोइंग आइकन</string>
+    <string name="sym_call_incoming_description">सिम कॉल इनकमिंग आइकन</string>
+    <string name="chat_window_title">चैट विंडो</string>
+
 
     <!-- Toast Text -->
     <string name="empty_email_or_password">ईमेल या पासवर्ड खाली नहीं हो सकता</string>
@@ -33,6 +40,7 @@
     <string name="image_bitmap_received">इमेज बिटमैप प्राप्त हुआ और सेट किया गया</string>
     <string name="request_camera_permission">कैमरा अनुमति का अनुरोध किया जा रहा है</string>
     <string name="unable_to_open_camera">कैमरा खोलने में असमर्थ</string>
+    <string name="empty_message">संदेश खाली नहीं हो सकता।</string>
 
 
     <!--Shared Preferences-->

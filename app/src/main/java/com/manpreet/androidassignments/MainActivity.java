@@ -7,17 +7,14 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
-
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
-import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.core.app.NavUtils;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
-import com.google.android.material.snackbar.Snackbar;
 
 public class MainActivity extends AppCompatActivity {
     String DEBUG_MESSAGE_KEY = "MAIN_DEBUG";
@@ -30,7 +27,9 @@ public class MainActivity extends AppCompatActivity {
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         Button button = findViewById(R.id.button);
+        Button startChatButton = findViewById(R.id.start_chat);
         button.setOnClickListener(this::onButtonClick);
+        startChatButton.setOnClickListener(this::startChat);
         if(getSupportActionBar() != null){
             getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         }
@@ -96,5 +95,11 @@ public class MainActivity extends AppCompatActivity {
     public void onButtonClick(View view){
         Intent intent = new Intent(this,ListItemsActivity.class);
         startActivityForResult(intent,10);
+    }
+
+    public void startChat(View view){
+        Log.i(ACTIVITY_SERVICE, "User clicked Start Chat");
+        Intent intent = new Intent(this, ChatWindow.class);
+        startActivity(intent);
     }
 }

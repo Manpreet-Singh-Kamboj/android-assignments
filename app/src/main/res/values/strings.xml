@@ -17,7 +17,13 @@
     <string name="alert_dialog_title">Are you sure you want to continue?</string>
     <string name="alert_dialog_description">You are going to finish the current activity and will be navigated back to the previous activity.</string>
     <string name="ok">OK</string>
-    <string name="cancel">@android:string/cancel</string>
+    <string name="cancel">Cancel</string>
+    <string name="start_chat_text">Start Chat</string>
+    <string name="send_button">SEND</string>
+    <string name="default_message">Test Message</string>
+    <string name="sym_call_outgoing_description">Sym Call Outgoing Icon</string>
+    <string name="sym_call_incoming_description">Sym Call Incoming Icon</string>
+    <string name="chat_window_title">Chat Window</string>
 
     <!-- Toast Text -->
     <string name="empty_email_or_password">Email or Password cannot be empty</string>
@@ -32,6 +38,7 @@
     <string name="image_bitmap_received">Image Bitmap Received and Set</string>
     <string name="request_camera_permission">Requesting Camera Permissions</string>
     <string name="unable_to_open_camera">Unable to open Camera</string>
+    <string name="empty_message">Message cannot be empty.</string>
 
     <!--Shared Preferences-->
     <string name="shared_preferences_file_name">appData</string>
