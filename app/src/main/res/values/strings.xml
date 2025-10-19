@@ -24,6 +24,13 @@
     <string name="sym_call_outgoing_description">Sym Call Outgoing Icon</string>
     <string name="sym_call_incoming_description">Sym Call Incoming Icon</string>
     <string name="chat_window_title">Chat Window</string>
+    <string name="test_toolbar_text">Test Toolbar</string>
+
+    <!-- Menu Titles -->
+    <string name="choice_one">Choice One</string>
+    <string name="choice_two">Choice Two</string>
+    <string name="choice_three">Choice Three</string>
+    <string name="about">About</string>
 
     <!-- Toast Text -->
     <string name="empty_email_or_password">Email or Password cannot be empty</string>

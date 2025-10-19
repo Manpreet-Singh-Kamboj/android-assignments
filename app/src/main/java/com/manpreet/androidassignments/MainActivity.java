@@ -14,6 +14,7 @@ import androidx.core.app.NavUtils;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
+import com.manpreet.androidassignments.Assignment2.TestToolbar;
 
 
 public class MainActivity extends AppCompatActivity {
@@ -28,8 +29,10 @@ public class MainActivity extends AppCompatActivity {
         setSupportActionBar(toolbar);
         Button button = findViewById(R.id.button);
         Button startChatButton = findViewById(R.id.start_chat);
+        Button testToolbarButton = findViewById(R.id.test_toolbar);
         button.setOnClickListener(this::onButtonClick);
         startChatButton.setOnClickListener(this::startChat);
+        testToolbarButton.setOnClickListener(this::testToolbar);
         if(getSupportActionBar() != null){
             getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         }
@@ -100,6 +103,11 @@ public class MainActivity extends AppCompatActivity {
     public void startChat(View view){
         Log.i(ACTIVITY_SERVICE, "User clicked Start Chat");
         Intent intent = new Intent(this, ChatWindow.class);
+        startActivity(intent);
+    }
+
+    public void testToolbar(View view){
+        Intent intent = new Intent(this, TestToolbar.class);
         startActivity(intent);
     }
 }

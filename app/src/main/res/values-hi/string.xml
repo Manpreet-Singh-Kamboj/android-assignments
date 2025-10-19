@@ -25,6 +25,14 @@
     <string name="sym_call_outgoing_description">सिम कॉल आउटगोइंग आइकन</string>
     <string name="sym_call_incoming_description">सिम कॉल इनकमिंग आइकन</string>
     <string name="chat_window_title">चैट विंडो</string>
+    <string name="test_toolbar_text">परीक्षण टूलबार</string>
+
+    <!-- Menu Titles -->
+    <string name="choice_one">विकल्प एक</string>
+    <string name="choice_two">विकल्प दो</string>
+    <string name="choice_three">विकल्प तीन</string>
+    <string name="about">के बारे में</string>
+
 
 
     <!-- Toast Text -->
