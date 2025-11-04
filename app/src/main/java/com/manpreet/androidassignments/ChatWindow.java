@@ -1,7 +1,11 @@
 package com.manpreet.androidassignments;
 
+import android.content.ContentValues;
 import android.content.Context;
+import android.database.Cursor;
+import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -28,6 +32,9 @@ public class ChatWindow extends AppCompatActivity {
     Button sendButton;
     ArrayList<String> chatMessages;
     ChatAdapter chatAdapter;
+    SQLiteDatabase db;
+    private static final String ACTIVITY_NAME = "ChatWindowActivity";
+    ContentValues values;
 
     class ChatAdapter extends ArrayAdapter<String> {
         public ChatAdapter(@NonNull Context context) {
@@ -82,11 +89,40 @@ public class ChatWindow extends AppCompatActivity {
         chatMessages = new ArrayList<>();
         chatAdapter = new ChatAdapter(this);
         listView.setAdapter(chatAdapter);
+        ChatDatabaseHelper dbHelper = new ChatDatabaseHelper(this);
+        try{
+            db = dbHelper.getWritableDatabase();
+            Cursor cursor = db.rawQuery("SELECT * from messages", null);
+            if (cursor.moveToFirst()) {
+                do {
+                    String msg = cursor.getString(cursor.getColumnIndexOrThrow(ChatDatabaseHelper.KEY_MESSAGE));
+                    Log.i(ACTIVITY_NAME, "SQL MESSAGE: " + msg);
+                    chatMessages.add(msg);
+                } while (cursor.moveToNext());
+            } else {
+                Log.i(ACTIVITY_NAME, "No messages found in DB.");
+                Toast.makeText(this,"No Messages found in DB.",Toast.LENGTH_SHORT).show();
+            }
+            Log.i(ACTIVITY_NAME,"Cursor’s  column count = " + cursor.getColumnCount());
+            for (int i = 0; i < cursor.getColumnCount(); i++) {
+                Log.i(ACTIVITY_NAME, "Column " + i + " name = " + cursor.getColumnName(i));
+            }
+            cursor.close();
+        }catch (Exception e){
+            Log.e("ERROR_RETRIEVING_MESSAGES","Error occurred while retrieving messages... " + e);
+        }
+        values = new ContentValues();
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
+    }
+
+    @Override
+    public void onDestroy(){
+        super.onDestroy();
+        db.close();
     }
 
     public void sendMessage(View view){
@@ -96,6 +132,8 @@ public class ChatWindow extends AppCompatActivity {
             return;
         }
         chatMessages.add(message);
+        values.put("message",message);
+        db.insert("messages",null,values);
         chatAdapter.notifyDataSetChanged();
         messageInput.setText("");
     }
