@@ -30,9 +30,11 @@ public class MainActivity extends AppCompatActivity {
         Button button = findViewById(R.id.button);
         Button startChatButton = findViewById(R.id.start_chat);
         Button testToolbarButton = findViewById(R.id.test_toolbar);
+        Button weatherForecastButton = findViewById(R.id.weather_forecast);
         button.setOnClickListener(this::onButtonClick);
         startChatButton.setOnClickListener(this::startChat);
         testToolbarButton.setOnClickListener(this::testToolbar);
+        weatherForecastButton.setOnClickListener(this::startWeatherForecast);
         if(getSupportActionBar() != null){
             getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         }
@@ -108,6 +110,10 @@ public class MainActivity extends AppCompatActivity {
 
     public void testToolbar(View view){
         Intent intent = new Intent(this, TestToolbar.class);
+        startActivity(intent);
+    }
+    public void startWeatherForecast(View view){
+        Intent intent = new Intent(this, WeatherForecast.class);
         startActivity(intent);
     }
 }

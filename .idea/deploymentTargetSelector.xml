@@ -8,7 +8,7 @@
       <SelectionState runConfigName="ChatWindowInstrumentalTest">
         <option name="selectionMode" value="DROPDOWN" />
       </SelectionState>
-      <SelectionState runConfigName="LoginActivityInstrumentalTest">
+      <SelectionState runConfigName="ChatWindowDatabaseInstrumentalTest">
         <option name="selectionMode" value="DROPDOWN" />
       </SelectionState>
     </selectionStates>

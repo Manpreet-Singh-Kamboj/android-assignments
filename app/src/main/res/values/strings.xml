@@ -25,6 +25,9 @@
     <string name="sym_call_incoming_description">Sym Call Incoming Icon</string>
     <string name="chat_window_title">Chat Window</string>
     <string name="test_toolbar_text">Test Toolbar</string>
+    <string name="weather_forecast">Weather Forecast</string>
+    <string name="weather_forecast_activity_title">Weather Forecast</string>
+    <string name="weather_image_description">Weather Image Description</string>
 
     <!-- Menu Titles -->
     <string name="choice_one">Choice One</string>
