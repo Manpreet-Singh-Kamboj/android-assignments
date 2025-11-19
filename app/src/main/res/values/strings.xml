@@ -28,6 +28,7 @@
     <string name="weather_forecast">Weather Forecast</string>
     <string name="weather_forecast_activity_title">Weather Forecast</string>
     <string name="weather_image_description">Weather Image Description</string>
+    <string name="delete_message">Delete this message</string>
 
     <!-- Menu Titles -->
     <string name="choice_one">Choice One</string>
@@ -56,4 +57,6 @@
 
     <!--Intent Keys-->
     <string name="list_item_intent_key">Response</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
